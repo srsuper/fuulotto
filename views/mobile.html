@@ -1,0 +1,69 @@
+<div class="menu-mobile">
+    <ul class="list-4 w-list-unstyled">
+      <li class="nav-bottom-item">
+         <a href="index.html" class="w-inline-block" style="text-decoration: none;">
+          <img src="images/home.png" width="53" alt="" class="img-bottom-item">
+          <div class="text-block"><strong>หน้าแรก</strong></div>
+        </a>
+      </li>
+      <li class="nav-bottom-item no-logged">
+        <a href="register.html" style="text-decoration: none;">
+          <img src="images/register.png" width="53" alt="" class="img-bottom-item">
+          <div class="text-block"><strong>สมัครสมาชิก</strong></div>
+        </a>
+      </li>
+      <li class="nav-bottom-item no-logged">
+        <a href="login.html" style="text-decoration: none;">
+          <img src="images/login.png" width="53" alt="" class="img-bottom-item">
+          <div class="text-block"><strong>เข้าสู่ระบบ</strong></div>
+        </a>
+      </li>
+      <li class="nav-bottom-item logged /">
+        <a href="game.html" style="text-decoration: none;">
+          <img src="images/gamepad.png" width="53" alt="" class="img-bottom-item">
+          <div class="text-block"><strong>เล่นเกม</strong></div>
+        </a>
+      </li>
+      <li onclick="location.href='login.html';sessionStorage.clear();" class="nav-bottom-item logged">
+        <img src="images/logout.png" width="53" alt="" class="img-bottom-item">
+        <div class="text-block" ><strong>ออกจากระบบ</strong></div>
+      </li>
+      <li  class="nav-bottom-item logged">
+        <a href="wallet.html" style="text-decoration: none;">
+          <img src="images/wallet.png" width="53" alt="" class="img-bottom-item">
+          <div class="text-block"><strong>ฝาก-ถอน</strong></div>
+        </a>
+      </li>
+      <li class="nav-bottom-item no-logged">
+        <a href="promotion.html" style="text-decoration: none;">
+          <img src="images/promotion.png" width="53" alt="" class="img-bottom-item">
+          <div class="text-block"><strong>โปรโมชั่น</strong></div>
+        </a>
+      </li>
+      <li class="nav-bottom-item">
+        <a href="https://lin.ee/YV7g87A" target="_blank" style="text-decoration: none;">
+          <img src="images/contact.png" width="53" alt="" class="img-bottom-item">
+          <div class="text-block"><strong>ติดต่อเรา</strong></div>
+        </a>
+      </li>
+    </ul>
+  </div>
+
+
+
+<script>
+    //check isLogin
+    var user = JSON.parse(sessionStorage.getItem('user'));
+    if (user) {
+        var logged = document.getElementsByClassName("logged");
+        var unlogged = document.getElementsByClassName("no-logged");
+        for (var i = 0; i < unlogged.length; i++) {
+            unlogged[i].style.display = "none";
+        }
+        for (var j = 0; j < logged.length; j++) {
+            logged[j].style.display = "block";
+        }
+    }
+</script>
+
+

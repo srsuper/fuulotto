@@ -1,0 +1,65 @@
+
+<div data-collapse="medium" data-animation="default" data-duration="400" class="navbar-ufa w-nav">
+    <div class="container-nav w-container" style="margin-top: 20px;">
+      <div class="div-block-9"><a href="index.html" class="w-nav-brand"><img src="images/Ufacasino.png" width="299" alt="" class="logo-brand grow"></a></div>
+        <!-- srcset="images/Ufacasino-p-500.png 500w, images/Ufacasino-p-800.png 800w, images/Ufacasino-p-1080.png 1080w, images/Ufacasino-p-1600.png 1600w, images/Ufacasino-p-2000.png 2000w, images/Ufacasino-p-2600.png 2600w, images/Ufacasino-p-3200.png 3200w, images/Ufacasino.png 7084w" sizes="(max-width: 479px) 64vw, 240px"  -->
+      <div class="nav-menu">
+        <ul class="list-3 w-list-unstyled">
+          <li><a id="btn-login" href="index.html" class="nav-btn-second w-button grow">หน้าแรก</a></li>
+          <li><a id="btn-login" href="promotion.html" class="nav-btn-second w-button grow">โปรโมชั่น</a></li>
+          <li>
+            <div class="dropdown">
+              <button class="dropbtn grow" style="width: auto; padding-top: 19px; padding-left: 13px; padding-right: 13px;">คาสิโน</button>
+              <div class="dropdown-content">
+                <a onclick="saGame()" href="#" class="dropdown-link w-dropdown-link">SA Gaming</a>
+                <a onclick="sexy()" href="#" class="dropdown-link w-dropdown-link">Sexy Baccarat</a>
+                <a onclick="ag()" href="#" class="dropdown-link w-dropdown-link">Ag Gaming</a>
+                <a onclick="dream()" href="#" class="dropdown-link w-dropdown-link">Dream Gaming</a>
+                <a onclick="pretty()" href="#" class="dropdown-link w-dropdown-link">Pretty Gaming</a>
+              </div>
+            </div>
+          </li>
+          <li>
+            <div class="dropdown">
+              <button class="dropbtn grow" style="width: auto; padding-top: 19px; padding-left: 13px; padding-right: 13px;">สล็อต</button>
+              <div class="dropdown-content">
+              <a onclick="location.href='slot.html?game=xo'" href="#" class="dropdown-link ">Slot XO</a>
+              <a onclick="location.href='slot.html?game=live22'" href="#" class="dropdown-link ">Live 22</a>
+              <a onclick="location.href='slot.html?game=spg'" href="#" class="dropdown-link ">Spade Gaming</a>
+              <a onclick="location.href='slot.html?game=ds'" href="#" class="dropdown-link w-dropdown-link">Dragoon Soft</a>
+              <a onclick="location.href='slot.html?game=ameba'" href="#" class="dropdown-link w-dropdown-link">Ameba</a>
+              <a onclick="location.href='slot.html?game=gamatron'" href="#" class="dropdown-link w-dropdown-link">Gamatron</a>
+              <a onclick="location.href='slot.html?game=pg'" href="#"  class="dropdown-link w-dropdown-link">PG Slot</a></nav>
+              </div>
+            </div>
+          </li>
+          <li><a id="btn-wallet" href="wallet.html" class="nav-btn-second logged w-button grow">ฝากถอน</a></li>
+          <li><a  href="https://lin.ee/YV7g87A" class="nav-btn-second w-button grow">ติดต่อเรา</a></li>
+          <li><a id="btn-login" href="login.html" class="nav-btn-primary w-button no-logged">เข้าสู่ระบบ</a></li>
+          <li><a id="btn-logout" onclick="location.href='login.html';sessionStorage.clear();" href="#" class="nav-btn-primary w-button logged">ออกจากระบบ</a></li>
+          <li><a id="btn-register" href="register.html" class="nav-btn-primary w-button no-logged">สมัครสมาชิก</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    //check isLogin
+    var user = JSON.parse(sessionStorage.getItem('user'));
+    if (user) {
+        var logged = document.getElementsByClassName("logged");
+        var unlogged = document.getElementsByClassName("no-logged");
+        for (var i = 0; i < unlogged.length; i++) {
+            unlogged[i].style.display = "none";
+        }
+        for (var j = 0; j < logged.length; j++) {
+            logged[j].style.display = "block";
+        }
+    }
+</script>
+
+<!-- <script src="js/"></script> -->
+<!-- <script src="js/global.js" ></script> -->
+
+
+  
