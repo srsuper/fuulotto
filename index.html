@@ -37,12 +37,13 @@
  >เช็คแบบการแทง</button>
  <br>
  <div class="div-detail-pro">
-     <h2 class="detail-promotion" id="answer"></h2>
+     <h1 class="detail-promotion" id="answer"></h1>
+     <p class="detail-promotion" id="answer2"></p>
  </div> 
  
-    <input type="number" class="field-login w-input" placeholder="จำนวนเงิน&nbsp;&nbsp;บน" id="money1" required="required">
-    <input type="number" class="field-login w-input" placeholder="จำนวนเงิน&nbsp;&nbsp;โต๊ด" id="money2"  >
-    <input type="number" class="field-login w-input" placeholder="จำนวนเงิน&nbsp;&nbsp;ล่าง" id="money3"  >
+    <input type="number" class="field-login w-input" placeholder="จำนวนเงิน&nbsp;&nbsp;กรุณาอ่านด้านบนก่อนค่ะ" id="money1" required="required">
+   <!--  <input type="number" class="field-login w-input" placeholder="จำนวนเงิน&nbsp;&nbsp;โต๊ด" id="money2"  >
+    <input type="number" class="field-login w-input" placeholder="จำนวนเงิน&nbsp;&nbsp;ล่าง" id="money3"  >-->
     <button class="btn-login w-button" id="sendmessagebutton">แทงเลขนี้</button>
     </div>
 </div>
@@ -75,14 +76,17 @@ var a=document.getElementById("inputnumber").value;
 if (a.length == 1 )
   {
 document.getElementById("answer").innerHTML="เลขวิ่ง!";
+document.getElementById("answer2").innerHTML="คำแนะนำรูปแบบการแทง หมวด เลขวิ่ง<br/>อธิบาย ตัวย่อ บ = บน | ล = ล่าง | ต = โต๊ด | ก = กลับ(ใช้เฉพาะเลข 2ตัว) | ช = ชุด(ใช้กับเลข 3ตัว 4ตัว)<br/><h2>8/100บ&nbsp;&nbsp;8/100ล&nbsp;&nbsp;8/100*100</h2><br/>กรุณาใส่เฉพาะยอดเงินและสัญลักษณ์ ตัวอย่าง 100*100 | 100ล | 100บ";
   }
 else if (a.length == 2)
   {
 document.getElementById("answer").innerHTML="เลข2ตัว!";
+document.getElementById("answer2").innerHTML="คำแนะนำรูปแบบการแทง หมวด เลข2ตัว<br/>อธิบาย ตัวย่อ บ = บน | ล = ล่าง | ต = โต๊ด | ก = กลับ(ใช้เฉพาะเลข 2ตัว) | ช = ชุด(ใช้กับเลข 3ตัว 4ตัว)<br/><h2>89/100บ&nbsp;&nbsp;89/100บก&nbsp;&nbsp;89/100ต&nbsp;&nbsp;89/100ล&nbsp;&nbsp;89/100ลก&nbsp;&nbsp;89/100*100&nbsp;&nbsp;89/100*100ก</h2><br/>กรุณาใส่เฉพาะยอดเงินและสัญลักษณ์ ตามตัวอย่าง 100*100 | 100ล | 100บ | 100*100ก | 100ลก | 100ล | 100ต | 100บก";
   }
   else if (a.length == 3)
   {
 document.getElementById("answer").innerHTML="เลข3ตัว!";
+document.getElementById("answer2").innerHTML="คำแนะนำรูปแบบการแทง หมวด เลข3ตัว<br/>อธิบาย ตัวย่อ บ = บน | ล = ล่าง | ต = โต๊ด | ก = กลับ(ใช้เฉพาะเลข 2ตัว) | ช = ชุด(ใช้กับเลข 3ตัว 4ตัว)<br/><h2>789/100บ&nbsp;&nbsp;789/100ต&nbsp;&nbsp;789/100ล&nbsp;&nbsp;789/100ช&nbsp;&nbsp;789/100*100&nbsp;&nbsp;789/100*100*100</h2><br/>กรุณาใส่เฉพาะยอดเงินและสัญลักษณ์ ตามตัวอย่าง 100*100*100 | 100*100 | 100บ | 100*100ก | 100ช | 100ล | 100ต";
   }
   else if (a.length == 4)
   {
@@ -111,11 +115,11 @@ document.getElementById("answer").innerHTML="เลข4ตัว!";
                 const money1 = document.getElementById('money1').value;
                 const money2 = document.getElementById('money2').value;
                 const money3 = document.getElementById('money3').value; 
-                const tetmsg = inputnumber+"/"+money1+" "+money2+" "+money3;
-                const reMsg = tetmsg.replace(/\s/g, "*").replace(/^\*\*(\d*)$/g, "บ").replace(/^(\d*)\*\*$/g, "ล").replace(/^\*(\d*)\*$/g, "ต");
+                const tetmsg = inputnumber+"/"+money1;
+                //const reMsg = tetmsg.replace(/\s/g, "*").replace(/^\*\*(\d*)$/g, "บ").replace(/^(\d*)\*\*$/g, "ล").replace(/^\*(\d*)\*$/g, "ต");
                   liff.sendMessages([{
                     type: "text",
-                    text: reMsg
+                    text: tetmsg
                 }]).then(function () {
                     liff.closeWindow();
                 }).catch(function (error) {
